@@ -1,0 +1,89 @@
+body {
+  margin: 0 20px;
+  font-family: sans-serif;
+  max-width: 600px;
+}
+
+.principal {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tile_row {
+  float: left;
+  width: 100%;
+  min-width: 160px;
+}
+
+.tile {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background-color: cadetblue;
+  margin: 1px;
+}
+
+.casa-vazia:hover {
+  cursor: pointer;
+  background-color: #6f999b;
+}
+
+.x {
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("img/X.svg");
+}
+
+.o {
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("img/O.svg");
+}
+
+.placar {
+  margin: 0 30px;
+}
+
+table, th, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+
+tr:first-child td {
+  color: darkred;
+}
+
+tr:last-child td {
+  color: darkgreen;
+}
+
+tr:only-child td {
+  color: black;
+}
+
+#vencedor {
+  height: 20px;
+}
+
+.pisca {
+  animation: pisca-pisca 0.5s infinite;
+}
+
+@keyframes pisca-pisca {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+.negrito {
+  font-weight: bolder;
+  background-color: #f0f0f0;
+}

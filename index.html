@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Jogo da Velha</title>
+</head>
+
+<body onload="manejaEventos(true)">
+
+  <header>
+    <h1>Jogo da Velha</h1>
+    <h2>Jogador da vez: <span id="sJogadorDaVez">X</span></h2>
+  </header>
+
+  <main>
+    <div class="principal">
+      <div class="tabuleiro">
+        <div class="tile_row">
+          <span class="tile linha1 coluna1 diagonal1"></span>
+          <span class="tile linha1 coluna2"></span>
+          <span class="tile linha1 coluna3 diagonal2"></span>
+        </div>
+        <div class="tile_row">
+          <span class="tile linha2 coluna1"></span>
+          <span class="tile linha2 coluna2 diagonal1 diagonal2"></span>
+          <span class="tile linha2 coluna3"></span>
+        </div>
+        <div class="tile_row">
+          <span class="tile linha3 coluna1 diagonal2"></span>
+          <span class="tile linha3 coluna2"></span>
+          <span class="tile linha3 coluna3 diagonal1"></span>
+        </div>
+      </div>
+      <div class="placar">
+        <table>
+          <thead>
+            <tr>
+              <th>Jogador</th>
+              <th>Vitórias</th>
+              <th>Pontos</th>
+              <th>Tempo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="x-jogador" class="negrito">X</td>
+              <td id="x-vitorias">0</td>
+              <td id="x-pontos">0</td>
+              <td id="x-tempo">-</td>
+            </tr>
+            <tr>
+              <td id="o-jogador">O</td>
+              <td id="o-vitorias">0</td>
+              <td id="o-pontos">0</td>
+              <td id="o-tempo">-</td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th colspan="4">Tempo da Partida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="timer" colspan="4">00:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <h3 id="vencedor"></h3>
+    <div class="controles">
+      <button onclick="novaPartida();">Nova Partida</button>
+      <button onclick="if(confirm('Tem certeza?\nIsso irá apagar todo o placar!')){window.location.reload();}">Resetar</button>
+    </div>
+    <div>
+    <h3>Regra de Pontos:</h3>
+      <p>O jogador ganha 1 ponto se ganhar na 5ª jogada, 2 na 4ª, 3 na 5ª</p>
+      <p>Se a vitória vier na 4ª ou 3ª jogada, os pontos são contados em dobro!</p>
+      <p>Assim, vitórias na 4ª e 3ª jogada, geram 4 e 6 pontos, respectivamente.</p>
+      <p>Lembramos que o segundo jogador sempre vai ganhar, no máximo, na 4ª jogada, ou seja, sempre vai ganhar pontos em dobro em caso de vitória.</p>
+      <p>O jogador que inicia o jogo é alternado a cada rodada!</p>
+    </div>
+  </main>
+</body>
+<script src="script.js"></script>
+</html>
